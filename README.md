@@ -1,8 +1,6 @@
 # Gerenciamento de Cursos — API (Backend)
 
 API REST para gerenciamento de cursos, com autenticação JWT via Spring Security.
-Construída como parte de um desafio em duas fases: esta é a fase 1 (backend); a fase 2 será
-um front-end em Spring Boot + Thymeleaf + Tailwind.
 
 ## Stack
 
