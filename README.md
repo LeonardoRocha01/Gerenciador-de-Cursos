@@ -50,7 +50,7 @@ VALUES (
     gen_random_uuid(),
     'admin',
     'Administrador',
-    -- hash BCrypt da senha desejada (gere o seu, não reutilize este em produção)
+    
     '$2b$10$GNf8VR/babM2LPZhPP/Vg.jzCYIDnvI6T.9gdVc79RnbCqVN8B1kK',
     'ADMIN'
 );
