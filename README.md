@@ -119,9 +119,3 @@ As respostas de erro seguem um formato padronizado:
 | Credenciais inválidas no login    | 401    |
 | Sem token / token inválido        | 401    |
 | Erro inesperado                   | 500    |
-
-## Próximos passos
-
-- Endpoint de registro de usuário.
-- Testes automatizados (JUnit + MockMvc).
-- Front-end em Spring Boot + Thymeleaf + Tailwind consumindo esta API.
