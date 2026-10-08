@@ -1,8 +1,6 @@
 # Gerenciamento de Cursos — API (Backend)
 
 API REST para gerenciamento de cursos, com autenticação JWT via Spring Security.
-Construída como parte de um desafio em duas fases: esta é a fase 1 (backend); a fase 2 será
-um front-end em Spring Boot + Thymeleaf + Tailwind.
 
 ## Stack
 
@@ -52,7 +50,7 @@ VALUES (
     gen_random_uuid(),
     'admin',
     'Administrador',
-    -- hash BCrypt da senha desejada (gere o seu, não reutilize este em produção)
+    
     '$2b$10$GNf8VR/babM2LPZhPP/Vg.jzCYIDnvI6T.9gdVc79RnbCqVN8B1kK',
     'ADMIN'
 );
@@ -121,9 +119,3 @@ As respostas de erro seguem um formato padronizado:
 | Credenciais inválidas no login    | 401    |
 | Sem token / token inválido        | 401    |
 | Erro inesperado                   | 500    |
-
-## Próximos passos
-
-- Endpoint de registro de usuário.
-- Testes automatizados (JUnit + MockMvc).
-- Front-end em Spring Boot + Thymeleaf + Tailwind consumindo esta API.
