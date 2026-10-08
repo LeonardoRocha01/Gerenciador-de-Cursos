@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Curso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+</head>
+<body class="font-sans bg-surface min-h-screen text-gray-200 p-8">
+
+<div class="max-w-2xl mx-auto">
+
+    <a th:href="@{/cursos}" class="text-sm text-gray-400 hover:text-white transition-colors">&larr; Voltar</a>
+
+    <div class="bg-surface-light rounded-xl shadow-lg p-8 mt-4">
+
+        <h1 class="text-2xl font-semibold text-white mb-6"
+            th:text="${cursoId} ? 'Editar Curso' : 'Novo Curso'"></h1>
+
+        <form th:object="${form}"
+              th:action="${cursoId} ? @{/cursos/{id}/editar(id=${cursoId})} : @{/cursos}"
+              method="post" class="space-y-5">
+
+            <div>
+                <label for="nome" class="block text-sm text-gray-300 mb-1">Nome</label>
+                <input type="text" id="nome" th:field="*{nome}"
+                       class="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+                      class="text-danger text-sm mt-1 block"></span>
+            </div>
+
+            <div>
+                <label for="descricao" class="block text-sm text-gray-300 mb-1">Descrição</label>
+                <textarea id="descricao" th:field="*{descricao}" rows="3"
+                          class="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+            </div>
+
+            <div>
+                <label for="professor" class="block text-sm text-gray-300 mb-1">Professor</label>
+                <input type="text" id="professor" th:field="*{professor}"
+                       class="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+
+            <div>
+                <label for="cargaHoraria" class="block text-sm text-gray-300 mb-1">Carga Horária</label>
+                <input type="number" id="cargaHoraria" th:field="*{cargaHoraria}" min="1"
+                       class="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                <span th:if="${#fields.hasErrors('cargaHoraria')}" th:errors="*{cargaHoraria}"
+                      class="text-danger text-sm mt-1 block"></span>
+            </div>
+
+            <div>
+                <label for="categoria" class="block text-sm text-gray-300 mb-1">Categoria</label>
+                <input type="text" id="categoria" th:field="*{categoria}"
+                       class="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+
+            <div class="flex gap-3 pt-2">
+                <button type="submit"
+                        class="bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg px-4 py-2 transition-colors">
+                    Salvar
+                </button>
+                <a th:href="@{/cursos}"
+                   class="text-sm text-gray-400 hover:text-white px-4 py-2 transition-colors">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

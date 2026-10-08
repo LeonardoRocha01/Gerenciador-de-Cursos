@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cursos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+</head>
+<body class="font-sans bg-surface min-h-screen text-gray-200 p-8">
+
+<div class="max-w-4xl mx-auto">
+
+    <div class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-semibold text-white">Cursos</h1>
+        <div class="flex gap-3">
+            <a th:href="@{/cursos/novo}"
+               class="bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg px-4 py-2 transition-colors">
+                + Novo curso
+            </a>
+            <a th:href="@{/logout}"
+               class="text-sm text-gray-400 hover:text-white px-4 py-2 transition-colors">
+                Sair
+            </a>
+        </div>
+    </div>
+
+    <div class="bg-surface-light rounded-xl overflow-hidden shadow-lg">
+        <table class="w-full text-left text-sm">
+            <thead class="bg-gray-800 text-gray-400 uppercase text-xs">
+            <tr>
+                <th class="px-4 py-3">Nome</th>
+                <th class="px-4 py-3">Professor</th>
+                <th class="px-4 py-3">Carga Horária</th>
+                <th class="px-4 py-3"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="curso : ${cursos}" class="border-t border-gray-800 hover:bg-gray-800/50">
+                <td class="px-4 py-3 text-white" th:text="${curso.nome()}"></td>
+                <td class="px-4 py-3" th:text="${curso.professor()}"></td>
+                <td class="px-4 py-3" th:text="${curso.cargaHoraria()}"></td>
+                <td class="px-4 py-3 text-right">
+                    <a th:href="@{/cursos/{id}(id=${curso.id()})}"
+                       class="text-primary hover:underline">Ver detalhes</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

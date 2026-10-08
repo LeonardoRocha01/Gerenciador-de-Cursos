@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Erro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+</head>
+<body class="font-sans bg-surface min-h-screen flex items-center justify-center text-gray-200">
+
+<div class="bg-surface-light rounded-xl shadow-lg p-8 max-w-sm text-center">
+    <h1 class="text-xl font-semibold text-white mb-3">Ops, algo deu errado</h1>
+    <p class="text-gray-400 mb-6" th:text="${mensagem}"></p>
+    <a th:href="@{/cursos}"
+       class="inline-block bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg px-4 py-2 transition-colors">
+        Voltar para os cursos
+    </a>
+</div>
+
+</body>
+</html>

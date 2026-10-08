@@ -1,0 +1,36 @@
+# ==== Maven ====
+target/
+
+# ==== Node / npm (Tailwind CLI) ====
+node_modules/
+package-lock.json
+
+# O CSS compilado e gerado a partir do input.css via Tailwind CLI.
+# Nao versionamos o artefato gerado, so o codigo fonte (input.css).
+src/main/resources/static/css/output.css
+
+# ==== IntelliJ IDEA ====
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ==== Eclipse ====
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# ==== VS Code ====
+.vscode/
+
+# ==== Sistema operacional ====
+.DS_Store
+Thumbs.db
+
+# ==== Logs ====
+*.log
